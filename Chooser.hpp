@@ -2,11 +2,22 @@
 #include<iostream>
 #include<cstdint>
 using namespace std;
-namespace bullpgia
+#ifndef uint
+#define uint unsigned int
+#endif
+namespace bullpgia 
 {
-	class Chooser
+
+	class Chooser 
 	{
-	public: virtual string choose(uint length) = 0;
+		public:
+		/*Chooser()
+		{
+		}
+		virtual ~Chooser()
+		{
+		}*/
+		virtual string choose(uint length) = 0;
 	};
 
 }
