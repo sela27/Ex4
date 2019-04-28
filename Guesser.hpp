@@ -12,18 +12,18 @@ namespace bullpgia
 			int lastbull;
 			int lastpgia;
 		public:
-			Guesser()
+			/*Guesser()
 			{
 			}
 			virtual ~Guesser()
 			{
-			}
+			}*/
 			virtual string guess() = 0;
-			 void startNewGame(int l)
+			virtual void startNewGame(int l)
 			{
 				length = l;
 			}
-			void learn(string reply)
+			virtual void learn(string reply)
 			{
 			}
 	};

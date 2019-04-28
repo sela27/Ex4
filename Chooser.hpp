@@ -11,12 +11,12 @@ namespace bullpgia
 	class Chooser 
 	{
 		public:
-		Chooser()
+		/*Chooser()
 		{
 		}
 		virtual ~Chooser()
 		{
-		}
+		}*/
 		virtual string choose(uint length) = 0;
 	};
 
