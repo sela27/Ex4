@@ -43,15 +43,3 @@ namespace bullpgia {
 		return cal;
 	}
 }
-
-void main() {
-	cout << calculateBullAndPgia("1234", "1234") << endl;
-	cout << calculateBullAndPgia("1234", "4321") << endl;
-	cout << calculateBullAndPgia("1234", "9999") << endl;
-	cout << calculateBullAndPgia("9999", "9999") << endl;
-	cout << calculateBullAndPgia("1234", "1111") << endl;
-	cout << calculateBullAndPgia("1998", "4937") << endl;
-	cout << calculateBullAndPgia("1231", "1113") << endl;
-	cout << calculateBullAndPgia("1112", "2111") << endl;
-	system("pause");
-}

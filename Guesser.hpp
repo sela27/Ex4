@@ -7,7 +7,25 @@ namespace bullpgia
 {
 	class Guesser 
 	{
-		virtual string guess();
+		protected:
+			int length;
+			int lastbull;
+			int lastpgia;
+		public:
+			Guesser()
+			{
+			}
+			virtual ~Guesser()
+			{
+			}
+			virtual string guess() = 0;
+			 void startNewGame(int l)
+			{
+				length = l;
+			}
+			void learn(string reply)
+			{
+			}
 	};
 
 }
