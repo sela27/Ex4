@@ -6,15 +6,15 @@ using namespace bullpgia;
 
 namespace bullpgia {
 
-	string calculateBullAndPgia(string choose, string guess) {
-
-		int i;
+string calculateBullAndPgia(string choose, string guess) {
+    // i,j are iterators over inputs
+    int i;
 		int j;
-		int pgia = 0;
-		int bull = 0;
+		int pgiaa = 0; // good guess without index matchings
+		int bulls = 0; // good guess with index matchings as well
 		int num = choose.length();
-		int* arr_ZeroF_oneT = new int[num];
-
+		int* arr_ZeroF_oneT = new int[num]; //represents the guess string , marks hits , regardless if it's a bull or pgiaa
+      //this loop should be dele
 		for (i = 0; i < num; i++) {
 			arr_ZeroF_oneT[i] = 0;
 		}
@@ -23,14 +23,14 @@ namespace bullpgia {
 			char c = choose.at(i);
 			char g = guess.at(i);
 			if (c == g) {
-				bull++;
+				bulls++;
 				arr_ZeroF_oneT[i] = 1;
 				continue;
 			}
 			for (j = 0; j < guess.length(); j++) {
 				g = guess.at(j);
 				if (c == g && arr_ZeroF_oneT[j]==0) {
-					pgia++;
+					pgiaa++;
 					arr_ZeroF_oneT[j] = 1;
 					break;
 				}
@@ -39,7 +39,7 @@ namespace bullpgia {
 		}
 
 		delete[] arr_ZeroF_oneT;
-		string cal = to_string(bull) + "," + to_string(pgia);
-		return cal;
-	}
+		string cal = to_string(bulls) + "," + to_string(pgiaa);
+    return cal;
+}
 }
