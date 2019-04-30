@@ -64,15 +64,52 @@ int main() {
 		.CHECK_OUTPUT(calculateBullAndPgia("1112", "2111"), "2,2")
 		.CHECK_OUTPUT(calculateBullAndPgia("2111", "1112"), "2,2");
 
-		/*for (uint i=0; i<100; ++i) {
+		
+		//trying to check what is the best score
+		for (uint i=0; i<100; ++i) {
 			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=75, true);
 		}
 		for (uint i=0; i<100; ++i) {
 			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=50, true);
 		}
 		for (uint i=0; i<100; ++i) {
-			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=30, true);
-		}*/
+			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=40, true);
+		}
+
+		//test learn
+		testcase.CHECK_OK(smarty.learn("1,0"))
+		.CHECK_OK(g1234.learn("1,0"))
+		.CHECK_OK(smarty.learn("50,12"))
+		.CHECK_OK(g1234.learn("50,12"))
+		.CHECK_OK(smarty.learn("-1,10"))
+		.CHECK_OK(g1234.learn("-1,10"))
+		.CHECK_OK(smarty.learn("12,100"))
+		.CHECK_OK(g1234.learn("12,100"))
+		.CHECK_OK(smarty.learn("150,1000000"))
+		.CHECK_OK(g1234.learn("150,1000000"))
+		.CHECK_OK(smarty.learn("41,041"))
+		.CHECK_OK(g1234.learn("41,041"))
+		.CHECK_OK(smarty.learn("-10000,000"))
+		.CHECK_OK(g1234.learn("-100000,000"))
+		.CHECK_OK(smarty.learn("31,050"))
+		.CHECK_OK(g1234.learn("31,050"))
+		.CHECK_OK(smarty.learn("1234567,0"))
+		.CHECK_OK(g1234.learn("1234567,0"))
+		.CHECK_OK(smarty.learn("0,1234567"))
+		.CHECK_OK(g1234.learn("0,1234567"))
+		.CHECK_OK(smarty.learn("80,1"))
+		.CHECK_OK(g1234.learn("80,1"))
+		.CHECK_OK(smarty.learn("000,-0"))
+		.CHECK_OK(g1234.learn("000,-0"));
+
+
+		//test guess
+		testcase.CHECK_OK(smarty.guess())
+		.CHECK_OK(g1234.guess());
+
+		
+		//test Choose
+		testcase.CHECK_OUTPUT(c1234.choose(4) , "1234");
 		
 		
 

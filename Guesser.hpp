@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include <string>
 #include "calculate.hpp"
 
 using namespace std;
@@ -13,12 +14,6 @@ namespace bullpgia
 			int lastbull;
 			int lastpgia;
 		public:
-			/*Guesser()
-			{
-			}
-			virtual ~Guesser()
-			{
-			}*/
 			virtual string guess() = 0;
 			virtual void startNewGame(int l)
 			{
@@ -26,6 +21,10 @@ namespace bullpgia
 			}
 			virtual void learn(string reply)
 			{
+				string s1 = reply.substr(0, reply.find(","));
+				string s2 = reply.substr(reply.find(",") + 1);
+				lastbull = stoi(s1);
+				lastpgia = stoi(s2);
 			}
 	};
 
