@@ -28,8 +28,7 @@ namespace bullpgia {
 				continue;
 			}
 			for (j = 0; j < guess.length(); j++) {
-				//g = guess.at(j);
-				c = choose.at(j);
+				g = guess.at(j);
 				if (c == g && arr_ZeroF_oneT[j]==0) {
 					pgia++;
 					arr_ZeroF_oneT[j] = 1;
