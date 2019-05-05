@@ -8,7 +8,7 @@ public:
 	int Memory_bull = -1;
 	int index = 0;
 	bool last_drop = false;
-	void learn(string reply)
+	void learn(string reply) override
 	{
 		Memory_bull = this->lastbull;
 		Guesser::learn(reply);
