@@ -8,19 +8,6 @@ namespace bullpgia {
 
 	string calculateBullAndPgia(string choose, string guess) {
 
-		//for badkan bad tests, there some incorrect tests in badkan to we check separted
-		if(guess == "1")
-		{
-			if(choose == "001" || choose == "010")
-				return "0,1";
-			else if(choose == "100")
-				return "1,0";
-			else
-				return "-1,-1";
-		}
-
-
-
 		int i;
 		int j;
 		int pgia = 0;
